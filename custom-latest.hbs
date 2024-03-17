@@ -1,0 +1,17 @@
+{{!< default}} <main class="site-main">
+
+    <div class="term-container gh-canvas">
+        <section class="term">
+            <h1 class="term-name">Latest Updates</h1>
+        </section>
+    </div>
+
+    <div class="post-feed gh-canvas">
+        {{#get "posts" order="updated_at desc" limit="20" as |latest|}}
+        {{#foreach latest}}
+        {{> "loop"}}
+        {{/foreach}}
+        {{/get}}
+    </div>
+
+    </main>
